@@ -69,10 +69,10 @@ proxy-groups:
   type: select
   proxies:
     - "DIRECT"
-      - 🇺🇸 bwg cloudflare 1
-      - 🇺🇸 bwg cloudflare 2
-      - 🇺🇸 bwg cloudflare 3
-      - 🇺🇸 bwg trojan
+    - 🇺🇸 bwg cloudflare 1
+    - 🇺🇸 bwg cloudflare 2
+    - 🇺🇸 bwg cloudflare 3
+    - 🇺🇸 bwg trojan
 
 # Apple 服务代理
 - name: "Apple"
