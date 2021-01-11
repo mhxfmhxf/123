@@ -11,9 +11,15 @@ cfw-latency-url: 'http://cp.cloudflare.com/generate_204'
 
 
 proxies:
-  - {name: 254.76Mbps, server: 104.25.186.176, port: 443, type: vmess, uuid: 1b24f950-e282-c220-1495-1ab77788857a, alterId: 1, cipher: auto, tls: true, network: ws, ws-path: /mhxfvws, ws-headers: {Host: mhxf.icu}}
-  - {name: 244.63Mbps, server: 104.17.29.26, port: 443, type: vmess, uuid: 1b24f950-e282-c220-1495-1ab77788857a, alterId: 1, cipher: auto, tls: true, network: ws, ws-path: /mhxfvws, ws-headers: {Host: mhxf.icu}}
-  - {name: 215.66Mbps, server: 104.21.232.153, port: 443, type: vmess, uuid: 1b24f950-e282-c220-1495-1ab77788857a, alterId: 1, cipher: auto, tls: true, network: ws, ws-path: /mhxfvws, ws-headers: {Host: mhxf.icu}}
+  - {name: 🇺🇸 bwg cloudflare 1, server: 104.25.186.176, port: 443, type: vmess, uuid: 1b24f950-e282-c220-1495-1ab77788857a, alterId: 1, cipher: auto, tls: true, network: ws, ws-path: /mhxfvws, ws-headers: {Host: mhxf.icu}}
+  - {name: 🇺🇸 bwg cloudflare 2, server: 104.17.29.26, port: 443, type: vmess, uuid: 1b24f950-e282-c220-1495-1ab77788857a, alterId: 1, cipher: auto, tls: true, network: ws, ws-path: /mhxfvws, ws-headers: {Host: mhxf.icu}}
+  - {name: 🇺🇸 bwg cloudflare 3, server: 104.21.232.153, port: 443, type: vmess, uuid: 1b24f950-e282-c220-1495-1ab77788857a, alterId: 1, cipher: auto, tls: true, network: ws, ws-path: /mhxfvws, ws-headers: {Host: mhxf.icu}}
+  - {name: 🇺🇸 jms c16s3, server: c16s3.jamjams.net, port: 31970, type: vmess, uuid: a20fd768-7a10-41b7-8ddf-011133045698, alterId: 1, cipher: auto, tls: false}
+  - {name: 🇺🇸 jms c16s4, server: c16s4.jamjams.net, port: 31970, type: vmess, uuid: a20fd768-7a10-41b7-8ddf-011133045698, alterId: 1, cipher: auto, tls: false}
+  - {name: 🇺🇸 jms c16s5, server: c16s5.jamjams.net, port: 31970, type: vmess, uuid: a20fd768-7a10-41b7-8ddf-011133045698, alterId: 1, cipher: auto, tls: false}
+  - {name: 🇺🇸 jms c16s801, server: c16s801.jamjams.net, port: 31970, type: vmess, uuid: a20fd768-7a10-41b7-8ddf-011133045698, alterId: 1, cipher: auto, tls: false}
+  - {name: 🇺🇸 bwg trojan, server: 23.105.205.93, port: 443, type: trojan, password: 1b24f950-e282-c220-1495-1ab77788857a, sni: mhxf.icu}
+
 
 proxy-groups:
 - name: "PROXY"
@@ -21,25 +27,32 @@ proxy-groups:
   proxies:
       - "URLTest 自动选择"
       - "Fallback 故障转移"
-      - 254.76Mbps
-      - 244.63Mbps
-      - 215.66Mbps
+      - 🇺🇸 bwg cloudflare 1
+      - 🇺🇸 bwg cloudflare 2
+      - 🇺🇸 bwg cloudflare 3
+      - 🇺🇸 jms c16s3
+      - 🇺🇸 jms c16s4
+      - 🇺🇸 jms c16s5
+      - 🇺🇸 jms c16s801
+      - 🇺🇸 bwg trojan
 
 - name: "URLTest 自动选择"
   type: url-test
   proxies:
-      - 254.76Mbps
-      - 244.63Mbps
-      - 215.66Mbps
+      - 🇺🇸 bwg cloudflare 1
+      - 🇺🇸 bwg cloudflare 2
+      - 🇺🇸 bwg cloudflare 3
+      - 🇺🇸 bwg trojan
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
 
 - name: "Fallback 故障转移"
   type: fallback
   proxies:
-      - 254.76Mbps
-      - 244.63Mbps
-      - 215.66Mbps
+      - 🇺🇸 bwg cloudflare 1
+      - 🇺🇸 bwg cloudflare 2
+      - 🇺🇸 bwg cloudflare 3
+      - 🇺🇸 bwg trojan
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
 
@@ -56,9 +69,10 @@ proxy-groups:
   type: select
   proxies:
     - "DIRECT"
-    - 254.76Mbps
-    - 244.63Mbps
-    - 215.66Mbps
+      - 🇺🇸 bwg cloudflare 1
+      - 🇺🇸 bwg cloudflare 2
+      - 🇺🇸 bwg cloudflare 3
+      - 🇺🇸 bwg trojan
 
 # Apple 服务代理
 - name: "Apple"
@@ -72,9 +86,10 @@ proxy-groups:
   proxies:
       - "PROXY"
       - "DIRECT"
-      - 254.76Mbps
-      - 244.63Mbps
-      - 215.66Mbps
+      - 🇺🇸 bwg cloudflare 1
+      - 🇺🇸 bwg cloudflare 2
+      - 🇺🇸 bwg cloudflare 3
+      - 🇺🇸 bwg trojan
 
 # 大陆流媒体面向港澳台限定服务
 - name: "HKMTMedia"
@@ -82,9 +97,10 @@ proxy-groups:
   proxies:
       - "DIRECT"
       - "PROXY"
-      - 254.76Mbps
-      - 244.63Mbps
-      - 215.66Mbps
+      - 🇺🇸 bwg cloudflare 1
+      - 🇺🇸 bwg cloudflare 2
+      - 🇺🇸 bwg cloudflare 3
+      - 🇺🇸 bwg trojan
 
 - name: "Ads"
   type: select
